@@ -1,0 +1,22 @@
+{
+  "name": "web-dev-movie-catalog-backend",
+  "version": "1.0.0",
+  "description": "Back-end for university web development subject movie catalog project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FRicardi/web-dev-movie-catalog-back-end.git"
+  },
+  "author": "fricardi <felipericardi5@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FRicardi/web-dev-movie-catalog-back-end/issues"
+  },
+  "homepage": "https://github.com/FRicardi/web-dev-movie-catalog-back-end#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
