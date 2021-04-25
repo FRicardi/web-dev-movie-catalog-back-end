@@ -3,7 +3,7 @@ import config from '../database/knexfile';
 import { Movie } from '../interfaces/movie';
 
 export class MovieService {
-    private static _instance = new MovieService();
+    private static _instance:any = new MovieService();
     table: string = 'movies';
     
     async getAll() {
