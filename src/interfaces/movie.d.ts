@@ -1,5 +1,7 @@
+import { Review } from "./review";
+
 export interface Movie {
-    id?: number;
+    id: number;
     name: string;
     type: string;
     category: string;
@@ -8,4 +10,5 @@ export interface Movie {
     cast: string;
     year: number;
     reviewAverage?: number;
+    reviews: Review[];
 }
