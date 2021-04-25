@@ -22,8 +22,11 @@ After this, you should be up and running :) If you rather, you can use ``yarn`` 
 ## Endpoints
 ```
 /movies 
-GET: get all movies
+GET: get all movies, returning movies object with Movie[] type inside
 POST: post a movie to database with Movie interface type
+
+/movies/:id
+GET: get movie by its id, returning movie object with Movie type inside
 ```
 
 ## Author
