@@ -9,6 +9,11 @@ moviesRouter.get('/', async (request, response) => {
     return response.json({ movies }); 
 });
 
+moviesRouter.get('/:id', async (request, response) => {
+    const movie = await movieService.getById(Number(request.params.id));
+    return response.json({ movie }); 
+});
+
 moviesRouter.post('/', async (request, response) => {
     const movie = await movieService.insert(request.body.movie);
     return response.json({success: movie}); 

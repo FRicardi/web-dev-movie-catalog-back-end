@@ -1,4 +1,4 @@
-import { knex } from 'knex';
+import { Knex, knex } from 'knex';
 import config from '../database/knexfile';
 import { Movie } from '../interfaces/movie';
 
@@ -9,6 +9,11 @@ export class MovieService {
     async getAll() {
         const movies: Movie[] = await knex(config.use).table(this.table).select('*');
         return movies;
+    }
+
+    async getById(id: number) {
+        const movie: Movie = await knex(config.use).table(this.table).select('*').where('id', id).first();
+        return movie;
     }
 
     async insert(movie: Movie) {
