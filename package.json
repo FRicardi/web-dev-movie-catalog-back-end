@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "knex": "knex",
+    "knex:migrate:make": "knex --knexfile src/database/knexfile.ts -x ts migrate:make",
+    "knex:migrate:latest": "knex --knexfile src/database/knexfile.ts migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile src/database/knexfile.ts migrate:rollback",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.ts",
     "build": "tsc --project ./"
