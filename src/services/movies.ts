@@ -15,7 +15,7 @@ export class MovieService {
 
         const addReviews = async () => {
             return Promise.all(movies.map(async (movie) => {
-                let movieReviews: Review[] = await reviewService.getAllMovieReviews(movie.id);
+                const movieReviews: Review[] = await reviewService.getAllMovieReviews(movie.id);
                 let acm = 0;
                 for(let review of movieReviews) {
                     acm += review.review;
