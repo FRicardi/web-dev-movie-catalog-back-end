@@ -7,4 +7,5 @@ export interface Movie {
     director: string;
     cast: string;
     year: number;
+    reviewAverage?: number;
 }

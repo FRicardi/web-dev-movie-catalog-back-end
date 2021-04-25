@@ -7,7 +7,11 @@ export class MovieService {
     table: string = 'movies';
     
     async getAll() {
-        const movies: Movie[] = await knex(config.use).table(this.table).select('*');
+        const movies: Movie[] = await knex(config.use)
+        .table(`${this.table} as m`)
+        .leftJoin('reviews as r', 'm.id', 'r.movie_id')
+        .avg({ reviewAverage: 'r.review' })
+        .select('m.*');
         return movies;
     }
 
