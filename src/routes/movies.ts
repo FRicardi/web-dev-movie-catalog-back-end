@@ -5,12 +5,12 @@ import { movieService } from '../services/movies';
 const moviesRouter = Router();
 
 moviesRouter.get('/', async (request, response) => {
-    const movies = await movieService.getAll();
+    const movies: Movie[] = await movieService.getAll();
     return response.json({ movies }); 
 });
 
 moviesRouter.get('/:id', async (request, response) => {
-    const movie = await movieService.getById(Number(request.params.id));
+    const movie: Movie = await movieService.getById(Number(request.params.id));
     return response.json({ movie }); 
 });
 

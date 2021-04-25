@@ -1,4 +1,4 @@
-import { Knex, knex } from 'knex';
+import { knex } from 'knex';
 import config from '../database/knexfile';
 import { Movie } from '../interfaces/movie';
 
