@@ -5,18 +5,33 @@ import { movieService } from '../services/movies';
 const moviesRouter = Router();
 
 moviesRouter.get('/', async (request, response) => {
-    const movies: Movie[] = await movieService.getAll();
-    return response.json({ movies }); 
+    try {
+        const movies: Movie[] = await movieService.getAll();
+        return response.json({ movies }); 
+    } catch (e) {
+        response.status(500);
+        response.send({error: e});
+    }
 });
 
 moviesRouter.get('/:id', async (request, response) => {
-    const movie: Movie = await movieService.getById(Number(request.params.id));
-    return response.json({ movie }); 
+    try {
+        const movie: Movie = await movieService.getById(Number(request.params.id));
+        return response.json({ movie }); 
+    } catch (e) {
+        response.status(500);
+        response.send({error: e});
+    }
 });
 
 moviesRouter.post('/', async (request, response) => {
-    const movie = await movieService.insert(request.body.movie);
-    return response.json({success: movie}); 
+    try {
+        const movie = await movieService.insert(request.body.movie);
+        return response.json({success: movie}); 
+    } catch (e) {
+        response.status(500);
+        response.send({error: e});
+    }
 });
 
 export default moviesRouter;
