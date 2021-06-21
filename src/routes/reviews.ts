@@ -24,4 +24,4 @@ reviewsRouter.post('/', async (request, response) => {
     }
 });
 
-export default reviewsRouter;
+export { reviewsRouter };
