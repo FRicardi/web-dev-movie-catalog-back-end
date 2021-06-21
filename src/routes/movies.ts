@@ -25,16 +25,4 @@ moviesRouter.get('/:id', async (request, response) => {
     }
 });
 
-// Deprecated
-moviesRouter.post('/', async (request, response) => {
-    try {
-        const movie = await movieService.insert(request.body.movie);
-        return response.json({success: movie}); 
-    } catch (e) {
-        response.status(500);
-        response.send({error: e});
-    }
-});
-
-
-export default moviesRouter;
+export { moviesRouter };
