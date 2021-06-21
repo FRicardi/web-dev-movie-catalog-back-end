@@ -1,11 +1,10 @@
 import { Router } from "express";
-import config from '../database/knexfile';
-import { knex } from 'knex';
+import { userService } from "../services/users";
 
 const authRouter = Router();
 
 authRouter.get('/', async (req, res) => {
-    return await knex(config.use).table('').insert({})
+    return await userService.getUser({username: 'test', password: 'pass'});
 });
 
 export { authRouter };
