@@ -1,5 +1,3 @@
-require('ts-node/register');
-
 const config = {
   development: {
     client: 'sqlite3',
@@ -17,6 +15,7 @@ const config = {
     connection: {
       filename: './src/database/dev.sqlite3'
     },
+    useNullAsDefault: true
   }
 };
 
