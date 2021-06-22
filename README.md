@@ -8,6 +8,8 @@ npm install
 npm run knex:migrate:latest
 npm start
 ```
+Create a file named ``.env`` on the root folder with ``SECRET`` attribute. This attribute will be used as secret key to generate JWT.
+
 After this, you should be up and running :) If you rather, you can use ``yarn`` aswell.
 
 ## Structure
