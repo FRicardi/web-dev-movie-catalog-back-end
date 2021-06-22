@@ -22,8 +22,7 @@ After this, you should be up and running :) If you rather, you can use ``yarn`` 
 ## Endpoints
 ```
 /movies 
-GET: get all movies, returning movies object with Movie[] type inside
-POST: post a movie to database with Movie interface type
+GET: get all movies from YTS, paginated, returning MovieList object.
 
 /movies/:id
 GET: get movie by its id, returning movie object with Movie type inside
@@ -33,6 +32,12 @@ POST: post a review to a movie with Review interface type
 
 /reviews/:movie_id
 GET: get reviews for a movie, returning reviews object with Review[] type inside
+
+/auth/
+POST: returns json web token for the user sent. receives username and password
+
+/auth/create
+POST: Creates an user from its username and password
 
 ```
 
