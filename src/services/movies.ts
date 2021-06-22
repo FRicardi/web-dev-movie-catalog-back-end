@@ -40,10 +40,6 @@ export class MovieService {
         return knex(config.use).table(this.table).insert(movie);
     }
 
-    validateMovie(movie: Movie) {
-        var errors: string[] = []; 
-    }
-
     static get instance() {
       return this._instance;
     }
